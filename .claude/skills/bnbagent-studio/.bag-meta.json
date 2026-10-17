@@ -1,0 +1,23 @@
+{
+  "content_key": "d70889a18e8cc626d19862cebf7362d392ae0660a2dcdc58286ce2b20ff69395",
+  "files": {
+    "bnbagent-studio/SKILL.md": "bd5a25f8341f4712c833aab01a451d5276ce4a2945674df6263e2a25eebc53bb",
+    "bnbagent-studio/references/bnbagent-studio-adding-to-project.md": "fb42f9cc2ba2b608e976d6fbaa2873e08d94c63df30af063789c5c157649c43f",
+    "bnbagent-studio/references/bnbagent-studio-buying-from-bazaar.md": "dee8402ac03c0aa51d3a1337618263581e9da677243f3694f4bc53f91aad12a3",
+    "bnbagent-studio/references/bnbagent-studio-buying-via-8183.md": "e4c980ec9a3575c6687673eb5d8c9748a027f3b9b99532fb6b784c77cfd4bd5f",
+    "bnbagent-studio/references/bnbagent-studio-buying-via-mpp.md": "e85c7575da3b2e860c287402df0874877b6a5eb474458c128289e52893a5945a",
+    "bnbagent-studio/references/bnbagent-studio-extending-signing.md": "f8572f0c45d1e4441aa9bc0f0f88a3da54930868b51287c117658485f64850f0",
+    "bnbagent-studio/references/bnbagent-studio-operating.md": "26f9b640915901b2989f19229cf8c9b9cdb4d532baf8a7ddb59bc54d1beed9fc",
+    "bnbagent-studio/references/bnbagent-studio-scaffolding-agent.md": "a278b212718fcc37fc5fce54aaa8ebde2d74bf7c0c61b7dc510688fda725db29",
+    "bnbagent-studio/references/bnbagent-studio-selling-via-8183.md": "cd563942a7c8e3449ddc0e36ffc094ae512e3ac748dae8cad28ba1c8a1158e3a",
+    "bnbagent-studio/references/bnbagent-studio-selling-via-b402.md": "b9f5756138570090c16a73982369611f1dd1cd39c65fc035edb2edd8b8b1bcc8",
+    "bnbagent-studio/references/bnbagent-studio-use-aws-agentcore.md": "c1681819f7aefefd7aaa7315896e8b40e04f886b63e9b9d9693b924e2df65793",
+    "bnbagent-studio/references/bnbagent-studio-use-azure-foundry.md": "a49f20d171fbfab4824d11caf26b36dc1c6f1f669a9e5df8fbc41bb559f2ddcc",
+    "bnbagent-studio/references/bnbagent-studio-use-bnb-trial.md": "ffaf27cee308617f33e6e076bcafa7ed9e643162719a35d8344038b2b624d81d",
+    "bnbagent-studio/references/bnbagent-studio-use-createos.md": "f5860961b7e280add5fcf13547c72562a92163c90f1873f9e72809bd9070595a",
+    "bnbagent-studio/references/bnbagent-studio-using-altana-wallet.md": "a620336ced15bb8903d08291e402ee7fca854391b9f5d332edd04f5860510522",
+    "bnbagent-studio/references/bnbagent-studio-using-twak-wallet.md": "cd7fdc7873bf2b4a2e3431e2375556792d994c5ceef42a610483453990af4d75",
+    "bnbagent-studio/references/bnbagent-studio-wiring-llm-tools.md": "27991e7e27f9c9ea9e7c0de755f02d258dd7842c5b1756b184fab315d4dd3368"
+  },
+  "package_version": "0.0.15"
+}
