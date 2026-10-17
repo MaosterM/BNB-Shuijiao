@@ -30,7 +30,7 @@ The transactions below come from one run, in order:
 
 * **`SafeExit.sol`**, about 30 lines. `exit(token, amountIn, minOutBNB)` pulls the tokens from `msg.sender`, swaps them on PancakeSwap, and sends the BNB to `msg.sender`. There is **no recipient parameter**, so the proceeds can only go back to whoever is selling.
 * **`GuardedVault.sol`** holds the user's tokens. The guardian (AGENT) can call exactly one function, `eject(minOut)`, which sells through SafeExit, and the BNB stays in the vault. Only the owner can `withdraw` or `setGuardian`. There is no other way to move funds.
-* **Altana mode** (`GUARD_MODE=altana`). The user's own EOA becomes an Altana EIP-7702 account. AGENT gets a session key whose on-chain policy allows only `SafeExit.exit(address,uint256,uint256)` on one SafeExit address, has a native spend cap of 0.002 tBNB/day (relay fees), and expires in 24 h. The Altana account validator enforces this on-chain. `npm run altana-test` shows the same session being **refused** when it tries to transfer RUGME, approve, or send BNB to AGENT.
+* **Altana mode** (`GUARD_MODE=altana`). The user's own EOA becomes an Altana EIP-7702 account. Each reset gives the agent a fresh session key, stored in the gitignored, owner-only file `.altana/session-key.json` (one key per grant, because Altana's on-chain KeyStore registers each key only once). The key's on-chain policy allows only `SafeExit.exit(address,uint256,uint256)` on one SafeExit address, has a native spend cap of 0.002 tBNB/day (relay fees), and expires in 24 h. The Altana account validator enforces this on-chain. `npm run altana-test` shows the same session being **refused** when it tries to transfer RUGME, approve, or send BNB to AGENT.
 * **Tested.** `forge test` passes 6/6 against the real PancakeSwap router:
   * proceeds always return to the caller or the vault
   * `amountIn=0` sells the full balance
@@ -168,8 +168,8 @@ Before any agent has run, the status pill says **AGENT OFFLINE** and the cards s
 
 1. **Reset** (about 35–45 s). A fresh RUGME token and PancakeSwap pool are deployed, the supply is distributed, and SafeExit plus the vault are deployed. Follow along in **Run output**.
 2. **Arm.** The agent starts. The status pill turns amber, **● GUARD ARMED**, and the **risk brief** fills in: HIGH risk, team holds 30% of supply and 100% of the LP.
-3. **Rug.** DEV sells 5% of its holdings. Within about a second the **GUARDED** card turns green, **EJECTED ✓**, with the eject tx link.
-4. Eight seconds later DEV dumps the rest and pulls the liquidity. The chart crashes about 90% and the **UNGUARDED** card turns red, at about −99.9%.
+3. **Rug.** DEV sells 5% of its holdings. Within about a second the **WITH EJECTOR SEAT** card (the GUARDED user) turns green, **EJECTED ✓**, with the eject tx link.
+4. Eight seconds later DEV dumps the rest and pulls the liquidity. The chart crashes about 90% and the **WITHOUT EJECTOR SEAT** card (the UNGUARDED user) turns red, at about −99.9%.
 5. About 15 s after the ejection, the plain-English **explanation** appears above the event log.
 
 **Step-by-step version** (better for narrating a pitch):
@@ -178,8 +178,8 @@ Before any agent has run, the status pill says **AGENT OFFLINE** and the cards s
 |---|---|---|
 | **1 · Reset scenario** | Run output shows `Reset done` | "Fresh risky token: DEV holds 30% and all the liquidity." |
 | **2 · Arm guard** | Pill shows **● GUARD ARMED**, brief shows **HIGH RISK** | "Ejector Seat is watching the team wallet and the pool." |
-| **3 · Rug it** | GUARDED card shows **EJECTED ✓** | "The first team sale triggered an instant sell. The user is out in BNB." |
-| (nothing) | Chart crashes, UNGUARDED turns red | "Unguarded holders are left with nothing." |
+| **3 · Rug it** | WITH EJECTOR SEAT card shows **EJECTED ✓** | "The first team sale triggered an instant sell. The user is out in BNB." |
+| (nothing) | Chart crashes, WITHOUT EJECTOR SEAT card turns red | "Unguarded holders are left with nothing." |
 
 To run again, just press **▶ Run full demo** (or **1 · Reset scenario**) again. Each reset stops the old agent, deploys a new token, and clears the page.
 
@@ -237,7 +237,9 @@ If `npm run dashboard` is also running, the page updates live during a terminal 
 | Buttons are greyed out | An action is running (see "running: …" on the right), or the button doesn't apply right now: **Arm** while the agent runs, **Stop** while it doesn't. |
 | Page shows AGENT OFFLINE | No agent is running. Press **2 · Arm guard** or **▶ Run full demo**. |
 | Agent never arms (`agent did not arm`) | Usually the public RPC is slow or down. Retry. To switch RPC, set `RPC_HTTP` / `RPC_WS` in `.env` to another **BSC testnet** endpoint. Anything that isn't chain 97 is refused. |
-| Altana: `An error occurred while executing calls` | The Altana relay is flaky now and then. Press Reset again. |
+| Altana: `An error occurred while executing calls` during reset | The Altana relay fails now and then, and the setup already retries once by itself. If it still fails, press Reset again. |
+| Altana: `reverted: KeyStore: key already registered` | Fixed: every grant now uses a fresh session key. If you still see it, delete `.altana/session-key.json` and reset again. |
+| Altana: `no Altana session key` | The agent was started in Altana mode before any Altana reset. Run a reset with Guard set to **Altana session key**. |
 | `forge build` / `Command failed: forge build` | Install Foundry (Step 0). If the repo path contains an apostrophe, create the `contracts/out` folder by hand once. The scripts already do this automatically. |
 | Chart.js doesn't load (no chart) | The page loads Chart.js from cdnjs, so the browser needs internet. Everything else still works. |
 
@@ -246,7 +248,7 @@ If `npm run dashboard` is also running, the page updates live during a terminal 
 The dashboard is built to be projected: dark theme, big type. It shows:
 * the pre-flight risk brief
 * the live RUGME price chart
-* GUARDED vs UNGUARDED value cards (GUARDED turns green, "EJECTED ✓", with the tx link)
+* **WITH EJECTOR SEAT** vs **WITHOUT EJECTOR SEAT** value cards: the GUARDED and UNGUARDED users, each starting with the same 20,000 RUGME. The "with" card turns green, "EJECTED ✓", with the tx link.
 * the live event log with BscScan links and the AI explanation
 * the output of whatever script is running
 

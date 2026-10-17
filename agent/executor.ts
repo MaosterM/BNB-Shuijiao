@@ -3,7 +3,8 @@
 // (sendRawTransaction, or one Altana relay call). No LLM, no other network calls.
 import { encodeFunctionData, parseEventLogs, type Address, type Hash } from "viem";
 import { createClient, BNB_TESTNET, signerFromPrivateKey, type Session } from "@altananetwork/sdk";
-import { CHAIN_ID, SLIPPAGE_BPS, account, pk, publicClient } from "../scripts/lib/env.ts";
+import { CHAIN_ID, SLIPPAGE_BPS, account, publicClient } from "../scripts/lib/env.ts";
+import { loadSessionKey } from "../scripts/altana-setup.ts";
 import { artifact, erc20Abi, quoteSell } from "../scripts/lib/contracts.ts";
 
 export type Reserves = { token: bigint; bnb: bigint };
@@ -66,7 +67,7 @@ export class AltanaAdapter implements EjectAdapter {
   constructor(public holder: Address, private token: Address, private safeExit: Address, meta: any) {
     this.session = {
       walletAddress: holder,
-      signer: signerFromPrivateKey(pk("AGENT")),
+      signer: signerFromPrivateKey(loadSessionKey()), // the per-grant session key, not AGENT's main key
       publicKey: meta.publicKey,
       expiry: meta.expiry,
       permissions: {

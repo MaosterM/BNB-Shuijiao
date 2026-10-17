@@ -56,7 +56,7 @@ function render(s) {
   $("uval").textContent = fmt(u.nowBnb); chg($("uchg"), pct(u.nowBnb, u.startBnb));
   const ej = g.ejected;
   $("gcard").className = `card ${ej ? "safe" : ""}`;
-  $("gstatus").textContent = ej ? "EJECTED ✓ · safe in BNB" : "protected by Ejector Seat";
+  $("gstatus").textContent = ej ? "EJECTED ✓ · safe in BNB" : "same 20,000 RUGME · guarded";
   $("ejectlink").innerHTML = ej && g.tx ? `<a href="${TX(g.tx)}" target="_blank" rel="noopener">eject tx ${g.tx.slice(0, 10)}…</a>${s.ejection ? ` · ${s.ejection.latencyMs} ms after trigger block` : ""}` : "";
   $("ucard").className = `card ${pct(u.nowBnb, u.startBnb) < -50 ? "rekt" : ""}`;
 
