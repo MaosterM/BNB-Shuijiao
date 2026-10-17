@@ -1,6 +1,6 @@
 # Ejector Seat
 
-#github link: [https://github.com/MaosterM/BNB-Shuijiao](https://github.com/MaosterM/BNB-Shuijiao)
+# Github link: [https://github.com/MaosterM/BNB-Shuijiao](https://github.com/MaosterM/BNB-Shuijiao)
 
 **A non-custodial anti-rug agent on BNB Smart Chain.** You hold a small, risky token. Ejector Seat watches the team's wallets and the liquidity pool. The moment the team starts dumping (a team wallet sells into the pool, moves a big share of its bag, pulls liquidity, or mints new supply), plain deterministic code sells *your* tokens for BNB, usually before the main dump lands.
 
