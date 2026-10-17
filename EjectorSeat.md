@@ -4,6 +4,8 @@
 
 The agent's **only** power over your funds is *"sell this token and send the proceeds back to the owner"*. An LLM writes the pre-flight risk brief and the post-ejection explanation. It is never in the trigger-to-sell path and never touches a key.
 
+> New to the project? Read [HowItWorks.md](HowItWorks.md) first. It's a plain-language explanation of the system and the theory behind it, with no code.
+
 > BSC **testnet only** (chainId 97). Every script refuses to run if the RPC reports any other chain or looks like mainnet.
 
 ## Demo result (BSC testnet, real PancakeSwap V2)
