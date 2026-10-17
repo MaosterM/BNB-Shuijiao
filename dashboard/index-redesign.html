@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EJECTOR SEAT // Tactical Anti-Rug Guard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #06080d;
+    --panel: rgba(14, 19, 30, 0.82);
+    --panel-solid: #0e131e;
+    --line: #1e293b;
+    --line-bright: #334155;
+    --text: #f1f5f9;
+    --muted: #64748b;
+    --amber: #f59e0b;
+    --amber-glow: rgba(245, 158, 11, 0.25);
+    --green: #10b981;
+    --green-glow: rgba(16, 185, 129, 0.22);
+    --red: #f43f5e;
+    --red-glow: rgba(244, 63, 94, 0.25);
+    --blue: #38bdf8;
+    --font-display: 'Chakra Petch', system-ui, sans-serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.07) 0%, transparent 55%),
+      radial-gradient(circle at 90% 90%, rgba(56, 189, 248, 0.05) 0%, transparent 45%),
+      linear-gradient(rgba(30, 41, 59, 0.28) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 41, 59, 0.28) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+    color: var(--text);
+    font: 16px/1.5 var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle CRT Avionics Scanline Overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.18) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+  }
+
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(56, 189, 248, 0.4);
+    transition: all 0.2s ease;
+  }
+  a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  }
+
+  .wrap {
+    max-width: 1580px;
+    margin: 0 auto;
+    padding: 24px 32px 40px;
+    display: grid;
+    gap: 18px;
+  }
+
+  /* ================= HEADER ================= */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 14px 24px;
+    background: linear-gradient(90deg, rgba(19, 24, 36, 0.95) 0%, rgba(14, 19, 30, 0.6) 100%);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--amber);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+  }
+
+  h1 {
+    margin: 0;
+    font: 700 italic 34px/1 var(--font-display);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 0 24px rgba(245, 158, 11, 0.2);
+  }
+  h1::before {
+    content: "⚠️";
+    font-style: normal;
+    font-size: 24px;
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+  }
+  h1 span {
+    color: var(--amber);
+    background: rgba(245, 158, 11, 0.1);
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+
+  .tag {
+    color: var(--muted
