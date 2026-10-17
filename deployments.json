@@ -4,9 +4,9 @@
   "router": "0xD99D1c33F9fC3444f8101754aBC46c52416550D1",
   "factory": "0x6725F303b657a9451d8BA641348b6761A6CC7a17",
   "wbnb": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
-  "token": "0xdc4896205c3a28094d210f2dd4381f9b3b362288",
-  "pair": "0x1f059eC25a5D65Da1C64198288DfE48A58D4552E",
-  "deployBlock": 137266439,
+  "token": "0x4b1ada8b30095b737dacb4ad657edd876f4100cc",
+  "pair": "0x68e372E6cE63eE92a77C718a5C56AE8bA9B31C55",
+  "deployBlock": 137268971,
   "team": [
     "0x9CefbC90D80fF20C473b90D3Bc616e8C054438bD"
   ],
@@ -20,7 +20,7 @@
     "unguarded": "0x4aBF39e29DC60cA74Ddc78407cE3E133a23764dF",
     "agent": "0x09E690B355a2D3afC47092032dC0C94F4c10d5a8"
   },
-  "safeExit": "0x9818967cd8a3ab1ceb826ccebcfd9438abdad27a",
-  "vault": "0x65ab77d43bab11d6acedd5146213c29cc046e72b",
+  "safeExit": "0x17fcda0bd7267b3c17ade2078cdebd3e4041dc0f",
+  "vault": "0x6990d35267a0da2d57341986050896b79aae3717",
   "guardMode": "vault"
 }
