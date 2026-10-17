@@ -1,0 +1,46 @@
+{
+  "chainId": 97,
+  "dex": "pancakeswap-v2",
+  "router": "0xD99D1c33F9fC3444f8101754aBC46c52416550D1",
+  "factory": "0x6725F303b657a9451d8BA641348b6761A6CC7a17",
+  "wbnb": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+  "token": "0x5beee62d14a26bf5f2ce4f7722b4bd7211c6beb7",
+  "pair": "0x8F8592c9cD9eF38627C873490F8060252408ae60",
+  "deployBlock": 137265102,
+  "team": [
+    "0x9CefbC90D80fF20C473b90D3Bc616e8C054438bD"
+  ],
+  "safeList": [
+    "0x000000000000000000000000000000000000dEaD"
+  ],
+  "wallets": {
+    "deployer": "0x989BF389EB137dAc76cc69867b1DBB944d99b744",
+    "dev": "0x9CefbC90D80fF20C473b90D3Bc616e8C054438bD",
+    "guarded": "0xfE58927313CDB8A86708C9F101352524e2235C08",
+    "unguarded": "0x4aBF39e29DC60cA74Ddc78407cE3E133a23764dF",
+    "agent": "0x09E690B355a2D3afC47092032dC0C94F4c10d5a8"
+  },
+  "safeExit": "0xb1ed34b39fad6bec6027a4cae1c09b8ce6406201",
+  "vault": "0x032475c484193a188e1e03e18b507de0d1431d3a",
+  "guardMode": "altana",
+  "altana": {
+    "wallet": "0xfE58927313CDB8A86708C9F101352524e2235C08",
+    "publicKey": "0x04c42db0de7dd43f72fccca774d27d1fa92c4433795822ca81028da2dc89eb5f03273de7c48c8c0579dd2d7db9fba7e0b0b2a56eeb3d83aced0069c92f1f13d88d",
+    "expiry": 1792302762,
+    "permissions": {
+      "calls": [
+        {
+          "to": "0xb1ed34b39fad6bec6027a4cae1c09b8ce6406201",
+          "signature": "exit(address,uint256,uint256)"
+        }
+      ],
+      "spend": [
+        {
+          "limit": "2000000000000000",
+          "period": "day"
+        }
+      ]
+    },
+    "grantTx": "0xa6dff456885f3c7ffd42b53653120d6377e66481b028eaee1ae39c8caa34c121"
+  }
+}
