@@ -1,0 +1,38 @@
+{
+  "name": "ejector-seat",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Non-custodial anti-rug agent on BNB Smart Chain testnet",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "wallets": "tsx scripts/wallets.ts",
+    "fund": "tsx scripts/fund.ts",
+    "deploy": "tsx scripts/deploy.ts",
+    "setup": "tsx scripts/setup-scenario.ts",
+    "rug": "tsx scripts/rug.ts",
+    "reset": "tsx scripts/reset.ts",
+    "eject-test": "tsx scripts/eject-test.ts",
+    "altana-setup": "tsx scripts/altana-setup.ts",
+    "altana-test": "tsx scripts/altana-negative.ts",
+    "preflight": "tsx agent/preflight.ts",
+    "test:contracts": "forge test",
+    "agent": "tsx agent/index.ts",
+    "dashboard": "tsx agent/server.ts",
+    "demo": "tsx scripts/demo.ts",
+    "test": "tsx --test agent/*.test.ts"
+  },
+  "dependencies": {
+    "@altananetwork/sdk": "^0.7.1",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "@types/node": "^22.0.0",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

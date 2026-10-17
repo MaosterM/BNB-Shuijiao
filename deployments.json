@@ -1,0 +1,26 @@
+{
+  "chainId": 97,
+  "dex": "pancakeswap-v2",
+  "router": "0xD99D1c33F9fC3444f8101754aBC46c52416550D1",
+  "factory": "0x6725F303b657a9451d8BA641348b6761A6CC7a17",
+  "wbnb": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+  "token": "0x61120b18ac42882c61b52e5ca202b203f5df896b",
+  "pair": "0xF319D3278295FeA049EdedBd055AB3AAEdc24331",
+  "deployBlock": 137263484,
+  "team": [
+    "0x9CefbC90D80fF20C473b90D3Bc616e8C054438bD"
+  ],
+  "safeList": [
+    "0x000000000000000000000000000000000000dEaD"
+  ],
+  "wallets": {
+    "deployer": "0x989BF389EB137dAc76cc69867b1DBB944d99b744",
+    "dev": "0x9CefbC90D80fF20C473b90D3Bc616e8C054438bD",
+    "guarded": "0xfE58927313CDB8A86708C9F101352524e2235C08",
+    "unguarded": "0x4aBF39e29DC60cA74Ddc78407cE3E133a23764dF",
+    "agent": "0x09E690B355a2D3afC47092032dC0C94F4c10d5a8"
+  },
+  "safeExit": "0xc19c343eabd09d96949d288e1bac221c0167f38b",
+  "vault": "0xdf85b4eae703f4c754cb44006c9d4a1f52f16776",
+  "guardMode": "vault"
+}
